@@ -308,15 +308,17 @@ This system makes Kafka a powerful messaging platform for distributed systems th
                Producer
                   |
                 Topic            //The topic is the physical log storage in Kafka
+                  |              // Topic has multiple partitions that are stored in diff kafka brokers(server)
                   |
           Create a stream off of Topic
-               StreamA
+               StreamA          //Stream is a continuously updating flow of key value records
                   |
                   |
      Filter on StreamA to create Streams
         ---------------------------
         |         |               |
-     Stream1     Stream2      Stream3    Stream is the logical abstraction of the flow of data through processing steps. 
+     Stream1     Stream2      Stream3  //Stream is the logical abstraction of the flow of data through processing steps.
+       |           |              |    //Stream is a continuously updating flow of key value records
        |           |              |
        |           |              |
      Puts data   Puts data    Puts data    
